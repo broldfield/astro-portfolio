@@ -1,0 +1,44 @@
+---
+interface Props {
+	skill: string;
+
+}
+
+const { skill } = Astro.props;
+---
+
+<li class="card">
+	<div>
+		<p>{skill}</p>
+	</div>
+</li>
+<style>
+    li {
+        display: inline-block;
+    }
+	.card {
+		list-style: none;
+		padding: 1px;
+        margin-right: 10px;
+		background-color: #372C2E;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 7px;
+		background-position: 100%;
+		margin-bottom: 10px;
+
+	}
+	.card > div {
+		text-decoration: none;
+		line-height: 1.4;
+		padding: calc(1.5rem - 1px);
+		border-radius: 8px;
+		color: white;
+		background-color: #372C2E;
+	}
+
+	p {
+		margin: 0;
+		font-size: 1.5rem;
+	}
+</style>

@@ -1,0 +1,104 @@
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+	image: string;
+	hasGitHub: boolean;
+	hasImage: boolean;
+
+}
+
+const { href, title, body, image, hasGitHub, hasImage } = Astro.props;
+---
+
+<li class="card">
+	<div>
+		<div class="titleAndGit">
+			<h2>
+				{title}
+			</h2>
+				{hasGitHub ? 
+				<a href={href} target="_blank"><img class="GitHubImage" src='/github-mark.svg' alt='GitHub Link'></a> : 
+				<div></div>}
+		</div>
+
+		<div class="column">
+			<p>
+				{body}
+			</p>
+			<div class ="Link">
+				{hasImage ? <img src={image} alt={image}> : <div></div>}
+			</div>
+		</div>
+	</div>
+</li>
+<style>
+	.card {
+		list-style: none;
+		display: flex;
+		padding: 1px;
+		background-color: #372C2E;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 7px;
+		background-position: 100%;
+		margin-bottom: 10px;
+	}
+	.card > div {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: calc(1.5rem - 1px);
+		border-radius: 8px;
+		color: white;
+		background-color: #372C2E;
+	}
+	.column{
+		display: flex;
+	}
+	.Link {
+		margin-top: 20px;
+		margin-bottom: 10px;
+		text-align: center;
+
+	}
+
+	.Link > img {
+		flex: 1 1 auto;
+		margin: auto;
+		height: 700px;
+		border-radius: 10px;
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	.titleAndGit{
+		display: flex;
+	}
+	h2 {
+		margin: 0;
+		font-size: 2rem;
+		flex: 1 1 auto;
+	}
+
+	.GitHubImage{
+		flex: 1 1 auto;
+		text-align: end;
+		height:50px;
+		width:50px;
+	}
+	p {
+		flex: 4 4 auto;
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+		min-width: 300px;
+		white-space: pre-wrap;
+	}
+
+	@media (max-width: 900px) {
+		.column{
+			display: block;
+		}
+	}
+</style>
