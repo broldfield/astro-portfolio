@@ -144,10 +144,6 @@ const skillsArr = [
 		color: inherit;
 	}
 
-	a:hover {
-		color: #f3b488;
-		font-size: 24px;
-	}
 
 	main {
 		margin: auto;
@@ -187,7 +183,18 @@ const skillsArr = [
 	}
 	@media (max-width: 900px) {
 		footer {
-		display: block;
+			display: block;
+		}
+		a:active {
+			color: #f3b488;
+			font-size: 24px;
+		}
+	}
+
+	@media (min-width: 900px) {
+		a:hover {
+			color: #f3b488;
+			font-size: 24px;
 		}
 	}
 
@@ -219,7 +226,6 @@ const skillsArr = [
 		display: inline-block;
 	}
 	.card-grid {
-		
 		margin: 0;
 		padding-left: 0;
 		padding: 0;
@@ -255,7 +261,7 @@ const skillsArr = [
 	.aboutLink:hover {
 		color: #f3b488;
 		font-size: 24px;
-	
+	}
 
 
 </style>
